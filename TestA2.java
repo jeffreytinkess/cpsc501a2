@@ -1,1 +1,9 @@
-//test class, contains all junit tests
+
+public class TestA2{
+
+	public TestA2(){
+
+	}
+
+
+}
