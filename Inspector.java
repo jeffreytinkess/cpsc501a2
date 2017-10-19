@@ -46,13 +46,14 @@ public class Inspector{
 		System.out.println("Objects superclass name is: " + oc.getSuperclass().getName());
 		//print interfaces for this class
 		Class<?>[] interfaces = oc.getInterfaces();
-		System.out.println("******* Interface list *******");
+		System.out.println("************** Interfaces **************");
 		for (int i = 0; i < interfaces.length; i++){
 			//For each interface, print its name
 			System.out.println("Interface #" + i + ": " + interfaces[i].getName());
 		}
 		//Print all method information
 		inspectMethods(oc);
+		inspectConstructors(oc);
 
 	}
 	
@@ -64,6 +65,7 @@ public class Inspector{
 			System.out.println("This class has no declared methods");
 			return;
 		}
+		System.out.println("************** Methods **************");
 		int numMethod = 1;
 		for (int i = 0; i < methods.length; i++){
 			System.out.println("******* Method #" + numMethod + " *******");
@@ -97,14 +99,30 @@ public class Inspector{
 	}
 	private void inspectConstructors(Class c){
 		//Get array of all constructors from obj
-		
+		Constructor[] cons = c.getDeclaredConstructors();
 		//call helper method on each
+		System.out.println("************** Constructors **************");
+		int numCons = 1;
+		for (int i = 0; i < cons.length; i++){
+			System.out.println("******* Constructor #" + numCons + " *******");
+			inspectSingleConstructor(cons[i]);
+			numCons++;
+		}
 	}
 
 	private void inspectSingleConstructor(Constructor cons){
 		//print constructor name
+		System.out.println("Constructor name: " + cons.getName());
 		//print parameter types
+		Class[] params = cons.getParameterTypes();
+		System.out.print("Parameters: ");
+		for (int i = 0; i < params.length; i++){
+			System.out.print(params[i].getSimpleName() + ", ");
+		}
+		System.out.println("");
 		//print modifiers
+		String toPrint = Modifier.toString(cons.getModifiers());
+		System.out.println("Modifiers: " + toPrint);
 	}
 
 	private Object[] inspectFields(Object obj, boolean recursive){
