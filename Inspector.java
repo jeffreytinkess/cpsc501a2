@@ -59,31 +59,15 @@ public class Inspector{
 	//Helper method, find and prints all info about object methods
 	private void inspectMethods(Class c){
 		//Get an array of all methods in obj
-		ArrayList<Method> methods = new ArrayList<Method>();
-		//Get all private methods
-		Method[] declaredMethods = c.getDeclaredMethods();
-		//Get all other methods including inherited
-		Method[] otherMethods = c.getMethods();
-		//add all public methods first
-		for (int i = 0; i < otherMethods.length; i++){
-			methods.add(otherMethods[i]);
+		Method[] methods = c.getDeclaredMethods();
+		if (methods.length == 0){
+			System.out.println("This class has no declared methods");
+			return;
 		}
-		//then add private methods only
-		for (int i = 0; i < declaredMethods.length; i++){
-			int testForPublic = declaredMethods[i].getModifiers();
-			if (!Modifier.isPublic(testForPublic)){
-				//Method is not public so would not have been added yet, add it now
-				methods.add(declaredMethods[i]);
-			}
-		}
-		//TESTING
-		//System.out.println("Number of methods present is " + methods.size());
-		//System.out.println("number of declared methods " + declaredMethods.length);
-		//System.out.println("number of inherited methods " + otherMethods.length);
 		int numMethod = 1;
-		for (Method m:methods){
+		for (int i = 0; i < methods.length; i++){
 			System.out.println("******* Method #" + numMethod + " *******");
-			inspectSingleMethod(m);
+			inspectSingleMethod(methods[i]);
 			numMethod++;
 		}
 	}
@@ -111,8 +95,9 @@ public class Inspector{
 		String toPrint = Modifier.toString(m.getModifiers());
 		System.out.println("Modifiers: " + toPrint);
 	}
-	private void inspectConstructors(Object obj){
+	private void inspectConstructors(Class c){
 		//Get array of all constructors from obj
+		
 		//call helper method on each
 	}
 
