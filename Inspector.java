@@ -51,21 +51,65 @@ public class Inspector{
 			//For each interface, print its name
 			System.out.println("Interface #" + i + ": " + interfaces[i].getName());
 		}
+		//Print all method information
+		inspectMethods(oc);
 
 	}
 	
 	//Helper method, find and prints all info about object methods
-	private void inspectMethods(Object obj){
+	private void inspectMethods(Class c){
 		//Get an array of all methods in obj
-		//call method on each individual method
+		ArrayList<Method> methods = new ArrayList<Method>();
+		//Get all private methods
+		Method[] declaredMethods = c.getDeclaredMethods();
+		//Get all other methods including inherited
+		Method[] otherMethods = c.getMethods();
+		//add all public methods first
+		for (int i = 0; i < otherMethods.length; i++){
+			methods.add(otherMethods[i]);
+		}
+		//then add private methods only
+		for (int i = 0; i < declaredMethods.length; i++){
+			int testForPublic = declaredMethods[i].getModifiers();
+			if (!Modifier.isPublic(testForPublic)){
+				//Method is not public so would not have been added yet, add it now
+				methods.add(declaredMethods[i]);
+			}
+		}
+		//TESTING
+		//System.out.println("Number of methods present is " + methods.size());
+		//System.out.println("number of declared methods " + declaredMethods.length);
+		//System.out.println("number of inherited methods " + otherMethods.length);
+		int numMethod = 1;
+		for (Method m:methods){
+			System.out.println("******* Method #" + numMethod + " *******");
+			inspectSingleMethod(m);
+			numMethod++;
+		}
 	}
 
 	private void inspectSingleMethod(Method m){
 		//print method name
+		System.out.println("Method name: " + m.getName());
 		//print return type
+		System.out.println("Return type: " + m.getReturnType().getSimpleName());
 		//print parameter type
+		System.out.print("Parameter types: ");
+		Class[] parameters = m.getParameterTypes();
+		for (int i = 0; i < parameters.length; i++){
+			System.out.print(parameters[i].getSimpleName() + ", ");
+		}
+		System.out.println("");
 		//print exceptions
+		Class[] exceptions = m.getExceptionTypes();
+		System.out.print("Exception types: ");
+		for (int i = 0; i < exceptions.length; i++){
+			System.out.print(exceptions[i].getSimpleName() + ", ");
+		}
+		System.out.println("");
 		//print modifiers
+		String toPrint = Modifier.toString(m.getModifiers());
+		System.out.println("Modifiers: " + toPrint);
 	}
 	private void inspectConstructors(Object obj){
 		//Get array of all constructors from obj
