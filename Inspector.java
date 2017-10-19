@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class Inspector{
-	private static ArrayList<Class> visitedClasses;
+	private static ArrayList<String> visitedClasses;
 	private static Inspector singleton = null;
 	
 	public void Inspector(){
@@ -16,14 +16,41 @@ public class Inspector{
 
 
 	public void inspect(Object obj, boolean recursive){
+		//oc = object class
+		Class oc = obj.getClass();
+		if (oc == null){
+			//Should never happen, means null was passed in. Print as such and return
+			System.out.println("obj is null");
+			return;
+		}
 		//create list of visited objects if it has not been created
+		if (visitedClasses == null){
+			visitedClasses = new ArrayList<String>();
+		}
+		String objName = oc.getName();
 		//check if this class is in list (if recursive is true), return if so
+		if (recursive){
+			//inefficient but will find duplicate visits
+			for (String storedName:visitedClasses){
+				if (objName.equals(storedName)){
+					return;
+				}
+			}		
+		}
 		//add obj class to list of visited objects
+		visitedClasses.add(objName);
 		
 		//Print name of declaring class
+		System.out.println("Objects name is: " + objName);
 		//print name of superclass
+		System.out.println("Objects superclass name is: " + oc.getSuperclass().getName());
 		//print interfaces for this class
-		//print method info
+		Class<?>[] interfaces = oc.getInterfaces();
+		System.out.println("******* Interface list *******");
+		for (int i = 0; i < interfaces.length; i++){
+			//For each interface, print its name
+			System.out.println("Interface #" + i + ": " + interfaces[i].getName());
+		}
 
 	}
 	
