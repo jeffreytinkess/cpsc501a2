@@ -19,7 +19,7 @@ public class TestA2{
 		TestA2 test = new TestA2();
 		//pass it an object
 		Object s = new String("Hello world");
-		i.inspect(test, false);
+		i.inspect(test, true);
 
 	}
 }

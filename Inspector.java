@@ -71,7 +71,7 @@ public class Inspector{
 		//If recursive is on, call inspect method on each object returned from field inspection
 		if (recursive){
 			for (int i = 0; i < fieldObjRef.length; i++){
-				inspect(fieldObjRef, recursive);
+				inspect(fieldObjRef[i], recursive);
 			}
 		}
 
@@ -158,6 +158,7 @@ public class Inspector{
 			if (isObject && recursive){
 				try{
 					objList.add(fields[i].get(obj));
+					System.out.println("DEBUG: added an object for recirsive testing");
 				} catch (IllegalAccessException iae){}
 				  catch (IllegalArgumentException iae){}
 				  catch (NullPointerException npe) {}
