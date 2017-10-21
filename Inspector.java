@@ -44,6 +44,8 @@ public class Inspector{
 		System.out.println("Objects name is: " + objName);
 		//print name of superclass
 		System.out.println("Objects superclass name is: " + oc.getSuperclass().getName());
+		System.out.println();
+		System.out.println();
 		//print interfaces for this class
 		Class<?>[] interfaces = oc.getInterfaces();
 		System.out.println("************** Interfaces **************");
@@ -52,8 +54,17 @@ public class Inspector{
 			System.out.println("Interface #" + i + ": " + interfaces[i].getName());
 		}
 		//Print all method information
+		System.out.println();
+		System.out.println();
 		inspectMethods(oc);
+		//Print all constructor info
+		System.out.println();
+		System.out.println();
 		inspectConstructors(oc);
+		//print all field info
+		System.out.println();
+		System.out.println();
+		Object[] fieldObjRef = inspectFields(obj, recursive);
 
 	}
 	
@@ -126,18 +137,56 @@ public class Inspector{
 	}
 
 	private Object[] inspectFields(Object obj, boolean recursive){
+		System.out.println("************** Fields **************");
+		ArrayList<Object> objList = new ArrayList<Object>();
+		Class c = obj.getClass();
 		//get all fields for obj
-		//check if each is an object: if it is, add it to array to return
-		//if recursive is on and field is an obj, dont call helper: otherwise call helper
-		//always call helper if primitive
-		return null;
+		Field[] fields = c.getFields();
+		int fieldNum = 1;
+		for (int i = 0; i < fields.length; i++){
+			System.out.println("******* Field #" + fieldNum + " *******");
+			boolean isObject = inspectSingleField(fields[i], recursive, obj);
+			if (isObject && recursive){
+				try{
+					objList.add(fields[i].get(obj));
+				} catch (IllegalAccessException iae){}
+				  catch (IllegalArgumentException iae){}
+				  catch (NullPointerException npe) {}
+				  catch (ExceptionInInitializerError eiie) {}
+			}
+			fieldNum++;
+		}
+		
+		return objList.toArray();
 	}
 
-	private void inspectSingleField(Field f){
+	private boolean inspectSingleField(Field f, boolean recursive, Object object){
 		//Print field name
+		System.out.println("Field name: " + f.getName());
 		//print type
+		System.out.println("Field type: " + f.getType().getSimpleName());
 		//print modifiers
+		String toPrint = Modifier.toString(f.getModifiers());
+		System.out.println("Modifiers: " + toPrint);
 		//print current value
+		Class c = f.getType();
+		//handle specific cases
+		if (c.isPrimitive()){
+			try{
+				Object fieldValue = f.get(object);
+				System.out.println("***Primitive Field*** Value: " + fieldValue.toString());
+			} catch (Exception e) {}
+		} else if (c.isArray()){
+
+		} else { //If it reaches this point it is an object reference, check recursive and handle
+			if (!recursive){
+				try{
+					Object fieldValue = f.get(object);
+					System.out.println("***Object Reference Field*** Value: " + fieldValue.toString());
+				} catch (Exception e) {}
+			}
+		}
+		return false;
 	}
 
 
