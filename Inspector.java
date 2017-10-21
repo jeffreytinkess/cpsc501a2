@@ -10,9 +10,9 @@ public class Inspector{
 	
 	
 	public void Inspector(){
-		if (toBeVisited == null){
-			toBeVisited = new ArrayList<Object>();
-		}
+		
+		toBeVisited = new ArrayList<Object>();
+		
 	}
 
 
@@ -28,7 +28,11 @@ public class Inspector{
 		if (visitedClasses == null){
 			visitedClasses = new ArrayList<String>();
 		}
-		String objName = oc.getName();
+		if (toBeVisited == null){
+			toBeVisited = new ArrayList<Object>();
+		}
+		//Get object identifier
+		String objName = obj.toString();
 		//check if this class is in list (if recursive is true), return if so
 		if (recursive){
 			//inefficient but will find duplicate visits
@@ -44,9 +48,11 @@ public class Inspector{
 		System.out.println();
 		System.out.println("************** Object Inspection Start **************");
 		//Print name of declaring class
-		System.out.println("Objects name is: " + objName);
+		System.out.println("Objects name is: " + oc.getName());
 		//print name of superclass
+		try{
 		System.out.println("Objects superclass name is: " + oc.getSuperclass().getName());
+		} catch (NullPointerException npe) {System.out.println("Object has no superclass (instance of Object)");};
 		System.out.println();
 		System.out.println();
 		//print interfaces for this class
@@ -67,12 +73,12 @@ public class Inspector{
 		//print all field info
 		System.out.println();
 		System.out.println();
-		Object[] fieldObjRef = inspectFields(obj, recursive);
+		inspectFields(obj, recursive);
 		System.out.println("************** Object Inspection End **************");
 		//If recursive is on, call inspect method on each object returned from field inspection
 		if (recursive){
-			for (int i = 0; i < fieldObjRef.length; i++){
-				inspect(fieldObjRef[i], recursive);
+			for (Object o:toBeVisited){
+				inspect(o, recursive);	
 			}
 		}
 
@@ -146,7 +152,7 @@ public class Inspector{
 		System.out.println("Modifiers: " + toPrint);
 	}
 
-	private Object[] inspectFields(Object obj, boolean recursive){
+	private void inspectFields(Object obj, boolean recursive){
 		System.out.println("************** Fields **************");
 		ArrayList<Object> objList = new ArrayList<Object>();
 		Class c = obj.getClass();
@@ -158,8 +164,8 @@ public class Inspector{
 			boolean isObject = inspectSingleField(fields[i], recursive, obj);
 			if (isObject && recursive){
 				try{
-					objList.add(fields[i].get(obj));
-					System.out.println("DEBUG: added an object for recirsive testing");
+					toBeVisited.add(fields[i].get(obj));
+					//System.out.println("DEBUG: added an object for recirsive testing");
 				} catch (IllegalAccessException iae){}
 				  catch (IllegalArgumentException iae){}
 				  catch (NullPointerException npe) {}
@@ -168,7 +174,7 @@ public class Inspector{
 			fieldNum++;
 		}
 		
-		return objList.toArray();
+		
 	}
 
 	private boolean inspectSingleField(Field f, boolean recursive, Object object){
