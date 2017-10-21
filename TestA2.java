@@ -6,7 +6,7 @@ public class TestA2{
 	public boolean testBool = false;
 	public int testInt = 42;
 	public double testFloat = 0.005;
-
+	public int[] testIntArray =  {1,2,3,4,5};
 
 	public TestA2(){
 		iTest = new Inspector();

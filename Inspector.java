@@ -4,13 +4,14 @@ import java.util.*;
 
 
 public class Inspector{
-	private static ArrayList<String> visitedClasses;
-	private static Inspector singleton = null;
+	private ArrayList<String> visitedClasses;
+	//List of objects that still must be recursively checked
+	private ArrayList<Object> toBeVisited;
+	
 	
 	public void Inspector(){
-		visitedClasses = null;
-		if (singleton == null){
-			singleton = this;
+		if (toBeVisited == null){
+			toBeVisited = new ArrayList<Object>();
 		}
 	}
 
@@ -187,7 +188,30 @@ public class Inspector{
 				System.out.println("***Primitive Field*** Value: " + fieldValue.toString());
 			} catch (Exception e) {}
 		} else if (c.isArray()){
-
+			System.out.println("***Array Field***");
+			Class elementType = c.getComponentType();
+			
+			try{
+			
+			
+			//If it is an object and recursion is on, add it to "to be visited" list
+			if (!elementType.isPrimitive() && recursive){
+				Object[] targetArray = (Object[]) f.get(object);
+				for (int i = 0; i < targetArray.length; i++){
+					//add all elements of array to list to be inspected individually
+					toBeVisited.add(targetArray[i]);
+				}	
+			} else {
+				//Print all info of each element
+				Object targetPrimArray = f.get(object);
+				//Use static methods in Array class to find length and elements indirectly
+				int primArrayLength = Array.getLength(targetPrimArray);
+				for (int i = 0; i < primArrayLength; i++){
+					Object element = Array.get(targetPrimArray, i);
+					System.out.println("Element #" + i + " value: " + element.toString());
+				}
+			}
+			} catch (Exception e){e.printStackTrace(); };
 		} else { //If it reaches this point it is an object reference, check recursive and handle
 			if (!recursive){
 				try{
