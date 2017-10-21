@@ -39,7 +39,9 @@ public class Inspector{
 		}
 		//add obj class to list of visited objects
 		visitedClasses.add(objName);
-		
+		System.out.println();
+		System.out.println();
+		System.out.println("************** Object Inspection Start **************");
 		//Print name of declaring class
 		System.out.println("Objects name is: " + objName);
 		//print name of superclass
@@ -65,6 +67,13 @@ public class Inspector{
 		System.out.println();
 		System.out.println();
 		Object[] fieldObjRef = inspectFields(obj, recursive);
+		System.out.println("************** Object Inspection End **************");
+		//If recursive is on, call inspect method on each object returned from field inspection
+		if (recursive){
+			for (int i = 0; i < fieldObjRef.length; i++){
+				inspect(fieldObjRef, recursive);
+			}
+		}
 
 	}
 	
@@ -184,6 +193,8 @@ public class Inspector{
 					Object fieldValue = f.get(object);
 					System.out.println("***Object Reference Field*** Value: " + fieldValue.toString());
 				} catch (Exception e) {}
+			}else {
+				return true;
 			}
 		}
 		return false;
