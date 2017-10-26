@@ -55,6 +55,22 @@ public class Inspector{
 		} catch (NullPointerException npe) {System.out.println("Object has no superclass (instance of Object)");};
 		System.out.println();
 		System.out.println();
+
+		//Get a list of intheritance chain
+		Set<String> inheritanceNames = new HashSet<String>();
+		getInheritenceChain(oc, inheritanceNames);
+		//Convert names into list of classes
+		Class[] inheritanceClasses = new Class[inheritanceNames.size()];
+		int currName = 0;
+		for (String name: inheritanceNames){
+			try{
+				Class c = Class.forName(name);
+				inheritanceClasses[currName] = c;
+				currName++;
+			} catch (ClassNotFoundException cnfe) {System.out.println("Cant find class for given name " + name);};
+		}
+		
+		
 		//print interfaces for this class
 		Class<?>[] interfaces = oc.getInterfaces();
 		System.out.println("************** Interfaces **************");
@@ -62,18 +78,28 @@ public class Inspector{
 			//For each interface, print its name
 			System.out.println("Interface #" + i + ": " + interfaces[i].getName());
 		}
+		
 		//Print all method information
 		System.out.println();
 		System.out.println();
 		inspectMethods(oc);
+		System.out.printf("%n ***** Inherited Methods ***** %n");
+		//Call inherited method helper
+		inspectInheritedMethods(inheritanceClasses);
 		//Print all constructor info
 		System.out.println();
 		System.out.println();
 		inspectConstructors(oc);
+		System.out.printf("%n ***** Inherited Constructors ***** %n");
+		//Call inherited constructor helper
+		inspectInheritedConstructors(inheritanceClasses);
 		//print all field info
 		System.out.println();
 		System.out.println();
 		inspectFields(obj, recursive);
+		System.out.printf("%n ***** Inherited Fields ***** %n");
+		//Call inherited field helper
+		inspectInheritedFields(inheritanceClasses, obj, recursive);
 		System.out.println("************** Object Inspection End **************");
 		//If recursive is on, call inspect method on each object returned from field inspection
 		if (recursive){
@@ -103,7 +129,7 @@ public class Inspector{
 
 	private void inspectSingleMethod(Method m){
 		//print method name
-		System.out.println("Method name: " + m.getName());
+		System.out.printf("%nMethod name: " + m.getName() + "%n");
 		//print return type
 		System.out.println("Return type: " + m.getReturnType().getSimpleName());
 		//print parameter type
@@ -124,6 +150,62 @@ public class Inspector{
 		String toPrint = Modifier.toString(m.getModifiers());
 		System.out.println("Modifiers: " + toPrint);
 	}
+
+	private void inspectInheritedMethods(Class[] classes){
+		ArrayList<Method> allMethods = new ArrayList<Method>();
+		for (int i = 0; i < classes.length; i++){
+			Method[] methods = classes[i].getDeclaredMethods();
+			for (int j = 0; j < methods.length; j++){
+				Method m = methods[j];
+				int modifier = m.getModifiers();
+				if (!Modifier.isPrivate(modifier) && !Modifier.isStatic(modifier)){
+					allMethods.add(m);
+				}
+			}
+		}
+		for (Method m:allMethods){
+			inspectSingleMethod(m);
+		}
+	}	
+
+	private void inspectInheritedConstructors(Class[] classes){
+		ArrayList<Constructor> allConstructors = new ArrayList<Constructor>();
+		for (int i = 0; i < classes.length; i++){
+			Constructor[] cons = classes[i].getDeclaredConstructors();
+			for (int j = 0; j < cons.length; j++){
+				Constructor c = cons[j];
+				int modifier = c.getModifiers();
+				if (!Modifier.isPrivate(modifier) && !Modifier.isStatic(modifier)){
+					allConstructors.add(c);
+				}
+			}
+		}
+		for (Constructor c:allConstructors){
+
+			inspectSingleConstructor(c);
+		}
+
+	}
+
+	private void inspectInheritedFields(Class[] classes, Object obj, boolean recursive){
+	ArrayList<Field> allFields = new ArrayList<Field>();
+	for (int i = 0; i < classes.length; i++){
+		Field[] fields = classes[i].getDeclaredFields();
+		for (int j = 0; j < fields.length; j++){
+			Field f = fields[j];
+			int modifier = f.getModifiers();
+			if (!Modifier.isPrivate(modifier) && !Modifier.isStatic(modifier)){
+				allFields.add(f);
+			}
+		}
+	}
+	for (Field f : allFields){
+		inspectSingleField(f, recursive, obj);
+	}
+
+	}
+
+
 	private void inspectConstructors(Class c){
 		//Get array of all constructors from obj
 		Constructor[] cons = c.getDeclaredConstructors();
@@ -229,6 +311,23 @@ public class Inspector{
 			}
 		}
 		return false;
+	}
+
+	private void getInheritenceChain(Class c, Set<String> names){
+		Class mySuper = c.getSuperclass();
+		Class[] interfaces = c.getInterfaces();
+
+		if (mySuper == null){
+			return;
+		} else {
+			names.add(mySuper.getName());
+			for (int i = 0; i < interfaces.length; i++){
+				names.add(interfaces[i].getName());
+				getInheritenceChain(interfaces[i], names);
+			}
+			getInheritenceChain(mySuper, names);
+		}	
+		
 	}
 
 
