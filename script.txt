@@ -1,0 +1,1594 @@
+Loading object inspector: Inspector
+======================================================
+Running Test: ClassA
+
+
+************** Object Inspection Start **************
+Objects name is: ClassA
+Objects superclass name is: java.lang.Object
+
+
+************** Interfaces **************
+Interface #0: java.io.Serializable
+Interface #1: java.lang.Runnable
+
+
+************** Methods **************
+******* Method #1 *******
+
+Method name: run
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #2 *******
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #3 *******
+
+Method name: setVal
+Return type: void
+Parameter types: int, 
+Exception types: Exception, 
+Modifiers: public
+******* Method #4 *******
+
+Method name: getVal
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #5 *******
+
+Method name: printSomething
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: private
+
+ ***** Inherited Methods ***** 
+
+Method name: finalize
+Return type: void
+Parameter types: 
+Exception types: Throwable, 
+Modifiers: protected
+
+Method name: wait
+Return type: void
+Parameter types: long, int, 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: wait
+Return type: void
+Parameter types: long, 
+Exception types: InterruptedException, 
+Modifiers: public final native
+
+Method name: wait
+Return type: void
+Parameter types: 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: hashCode
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public native
+
+Method name: getClass
+Return type: Class
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: clone
+Return type: Object
+Parameter types: 
+Exception types: CloneNotSupportedException, 
+Modifiers: protected native
+
+Method name: notify
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: notifyAll
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: run
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public abstract
+
+
+************** Constructors **************
+******* Constructor #1 *******
+Constructor name: ClassA
+Parameters: 
+Modifiers: public
+******* Constructor #2 *******
+Constructor name: ClassA
+Parameters: int, 
+Modifiers: public
+
+ ***** Inherited Constructors ***** 
+Constructor name: java.lang.Object
+Parameters: 
+Modifiers: public
+
+
+************** Fields **************
+
+ ***** Inherited Fields ***** 
+************** Object Inspection End **************
+======================================================
+======================================================
+Running Test: ClassA
+======================================================
+======================================================
+Running Test: ClassB
+
+
+************** Object Inspection Start **************
+Objects name is: ClassB
+Objects superclass name is: ClassC
+
+
+************** Interfaces **************
+Interface #0: java.lang.Runnable
+
+
+************** Methods **************
+******* Method #1 *******
+
+Method name: run
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #2 *******
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #3 *******
+
+Method name: func3
+Return type: void
+Parameter types: int, 
+Exception types: 
+Modifiers: public
+
+ ***** Inherited Methods ***** 
+
+Method name: func2
+Return type: int
+Parameter types: String, 
+Exception types: Exception, ArithmeticException, IllegalMonitorStateException, 
+Modifiers: public abstract
+
+Method name: func1
+Return type: void
+Parameter types: int, double, boolean, String, 
+Exception types: Exception, 
+Modifiers: public abstract
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: getVal3
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: finalize
+Return type: void
+Parameter types: 
+Exception types: Throwable, 
+Modifiers: protected
+
+Method name: wait
+Return type: void
+Parameter types: long, int, 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: wait
+Return type: void
+Parameter types: long, 
+Exception types: InterruptedException, 
+Modifiers: public final native
+
+Method name: wait
+Return type: void
+Parameter types: 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: hashCode
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public native
+
+Method name: getClass
+Return type: Class
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: clone
+Return type: Object
+Parameter types: 
+Exception types: CloneNotSupportedException, 
+Modifiers: protected native
+
+Method name: notify
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: notifyAll
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: run
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public abstract
+
+Method name: run
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: func0
+Return type: void
+Parameter types: int, boolean, 
+Exception types: Exception, 
+Modifiers: public
+
+Method name: func2
+Return type: int
+Parameter types: String, 
+Exception types: Exception, ArithmeticException, IllegalMonitorStateException, 
+Modifiers: public
+
+Method name: func3
+Return type: void
+Parameter types: int, 
+Exception types: 
+Modifiers: public abstract
+
+Method name: func1
+Return type: void
+Parameter types: int, double, boolean, String, 
+Exception types: Exception, 
+Modifiers: public
+
+
+************** Constructors **************
+******* Constructor #1 *******
+Constructor name: ClassB
+Parameters: 
+Modifiers: public
+
+ ***** Inherited Constructors ***** 
+Constructor name: ClassD
+Parameters: 
+Modifiers: public
+Constructor name: ClassD
+Parameters: int, 
+Modifiers: public
+Constructor name: java.lang.Object
+Parameters: 
+Modifiers: public
+Constructor name: ClassC
+Parameters: 
+Modifiers: public
+Constructor name: ClassC
+Parameters: int, int, 
+Modifiers: public
+
+
+************** Fields **************
+
+ ***** Inherited Fields ***** 
+************** Object Inspection End **************
+======================================================
+======================================================
+Running Test: ClassD
+
+
+************** Object Inspection Start **************
+Objects name is: ClassD
+Objects superclass name is: java.lang.Object
+
+
+************** Interfaces **************
+
+
+************** Methods **************
+******* Method #1 *******
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #2 *******
+
+Method name: getVal3
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+ ***** Inherited Methods ***** 
+
+Method name: finalize
+Return type: void
+Parameter types: 
+Exception types: Throwable, 
+Modifiers: protected
+
+Method name: wait
+Return type: void
+Parameter types: long, int, 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: wait
+Return type: void
+Parameter types: long, 
+Exception types: InterruptedException, 
+Modifiers: public final native
+
+Method name: wait
+Return type: void
+Parameter types: 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: hashCode
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public native
+
+Method name: getClass
+Return type: Class
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: clone
+Return type: Object
+Parameter types: 
+Exception types: CloneNotSupportedException, 
+Modifiers: protected native
+
+Method name: notify
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: notifyAll
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+
+************** Constructors **************
+******* Constructor #1 *******
+Constructor name: ClassD
+Parameters: 
+Modifiers: public
+******* Constructor #2 *******
+Constructor name: ClassD
+Parameters: int, 
+Modifiers: public
+
+ ***** Inherited Constructors ***** 
+Constructor name: java.lang.Object
+Parameters: 
+Modifiers: public
+
+
+************** Fields **************
+
+ ***** Inherited Fields ***** 
+************** Object Inspection End **************
+======================================================
+======================================================
+Running Test: ClassD
+======================================================
+======================================================
+Running Test: [LClassB;@42a57993
+
+
+************** Object Inspection Start **************
+Objects name is: [LClassB;
+Objects superclass name is: java.lang.Object
+
+
+************** Interfaces **************
+Interface #0: java.lang.Cloneable
+Interface #1: java.io.Serializable
+
+
+This class has no declared methods
+
+ ***** Inherited Methods ***** 
+
+Method name: finalize
+Return type: void
+Parameter types: 
+Exception types: Throwable, 
+Modifiers: protected
+
+Method name: wait
+Return type: void
+Parameter types: long, int, 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: wait
+Return type: void
+Parameter types: long, 
+Exception types: InterruptedException, 
+Modifiers: public final native
+
+Method name: wait
+Return type: void
+Parameter types: 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: hashCode
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public native
+
+Method name: getClass
+Return type: Class
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: clone
+Return type: Object
+Parameter types: 
+Exception types: CloneNotSupportedException, 
+Modifiers: protected native
+
+Method name: notify
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: notifyAll
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+
+************** Constructors **************
+
+ ***** Inherited Constructors ***** 
+Constructor name: java.lang.Object
+Parameters: 
+Modifiers: public
+
+
+************** Fields **************
+
+ ***** Inherited Fields ***** 
+************** Object Inspection End **************
+======================================================
+======================================================
+Running Test: [[LClassB;@232204a1
+
+
+************** Object Inspection Start **************
+Objects name is: [[LClassB;
+Objects superclass name is: java.lang.Object
+
+
+************** Interfaces **************
+Interface #0: java.lang.Cloneable
+Interface #1: java.io.Serializable
+
+
+This class has no declared methods
+
+ ***** Inherited Methods ***** 
+
+Method name: finalize
+Return type: void
+Parameter types: 
+Exception types: Throwable, 
+Modifiers: protected
+
+Method name: wait
+Return type: void
+Parameter types: long, int, 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: wait
+Return type: void
+Parameter types: long, 
+Exception types: InterruptedException, 
+Modifiers: public final native
+
+Method name: wait
+Return type: void
+Parameter types: 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: hashCode
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public native
+
+Method name: getClass
+Return type: Class
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: clone
+Return type: Object
+Parameter types: 
+Exception types: CloneNotSupportedException, 
+Modifiers: protected native
+
+Method name: notify
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: notifyAll
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+
+************** Constructors **************
+
+ ***** Inherited Constructors ***** 
+Constructor name: java.lang.Object
+Parameters: 
+Modifiers: public
+
+
+************** Fields **************
+
+ ***** Inherited Fields ***** 
+************** Object Inspection End **************
+======================================================
+======================================================
+Running Test: Test String
+
+
+************** Object Inspection Start **************
+Objects name is: java.lang.String
+Objects superclass name is: java.lang.Object
+
+
+************** Interfaces **************
+Interface #0: java.io.Serializable
+Interface #1: java.lang.Comparable
+Interface #2: java.lang.CharSequence
+
+
+************** Methods **************
+******* Method #1 *******
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public
+******* Method #2 *******
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #3 *******
+
+Method name: hashCode
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #4 *******
+
+Method name: compareTo
+Return type: int
+Parameter types: Object, 
+Exception types: 
+Modifiers: public volatile
+******* Method #5 *******
+
+Method name: compareTo
+Return type: int
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #6 *******
+
+Method name: indexOf
+Return type: int
+Parameter types: String, int, 
+Exception types: 
+Modifiers: public
+******* Method #7 *******
+
+Method name: indexOf
+Return type: int
+Parameter types: char[], int, int, String, int, 
+Exception types: 
+Modifiers: static
+******* Method #8 *******
+
+Method name: indexOf
+Return type: int
+Parameter types: char[], int, int, char[], int, int, int, 
+Exception types: 
+Modifiers: static
+******* Method #9 *******
+
+Method name: indexOf
+Return type: int
+Parameter types: int, 
+Exception types: 
+Modifiers: public
+******* Method #10 *******
+
+Method name: indexOf
+Return type: int
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #11 *******
+
+Method name: indexOf
+Return type: int
+Parameter types: int, int, 
+Exception types: 
+Modifiers: public
+******* Method #12 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: char, 
+Exception types: 
+Modifiers: public static
+******* Method #13 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: Object, 
+Exception types: 
+Modifiers: public static
+******* Method #14 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: boolean, 
+Exception types: 
+Modifiers: public static
+******* Method #15 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: char[], int, int, 
+Exception types: 
+Modifiers: public static
+******* Method #16 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: char[], 
+Exception types: 
+Modifiers: public static
+******* Method #17 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: double, 
+Exception types: 
+Modifiers: public static
+******* Method #18 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: float, 
+Exception types: 
+Modifiers: public static
+******* Method #19 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: long, 
+Exception types: 
+Modifiers: public static
+******* Method #20 *******
+
+Method name: valueOf
+Return type: String
+Parameter types: int, 
+Exception types: 
+Modifiers: public static
+******* Method #21 *******
+
+Method name: checkBounds
+Return type: void
+Parameter types: byte[], int, int, 
+Exception types: 
+Modifiers: private static
+******* Method #22 *******
+
+Method name: length
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #23 *******
+
+Method name: isEmpty
+Return type: boolean
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #24 *******
+
+Method name: charAt
+Return type: char
+Parameter types: int, 
+Exception types: 
+Modifiers: public
+******* Method #25 *******
+
+Method name: codePointAt
+Return type: int
+Parameter types: int, 
+Exception types: 
+Modifiers: public
+******* Method #26 *******
+
+Method name: codePointBefore
+Return type: int
+Parameter types: int, 
+Exception types: 
+Modifiers: public
+******* Method #27 *******
+
+Method name: codePointCount
+Return type: int
+Parameter types: int, int, 
+Exception types: 
+Modifiers: public
+******* Method #28 *******
+
+Method name: offsetByCodePoints
+Return type: int
+Parameter types: int, int, 
+Exception types: 
+Modifiers: public
+******* Method #29 *******
+
+Method name: getChars
+Return type: void
+Parameter types: int, int, char[], int, 
+Exception types: 
+Modifiers: public
+******* Method #30 *******
+
+Method name: getChars
+Return type: void
+Parameter types: char[], int, 
+Exception types: 
+Modifiers: 
+******* Method #31 *******
+
+Method name: getBytes
+Return type: byte[]
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #32 *******
+
+Method name: getBytes
+Return type: byte[]
+Parameter types: String, 
+Exception types: UnsupportedEncodingException, 
+Modifiers: public
+******* Method #33 *******
+
+Method name: getBytes
+Return type: void
+Parameter types: int, int, byte[], int, 
+Exception types: 
+Modifiers: public
+******* Method #34 *******
+
+Method name: getBytes
+Return type: byte[]
+Parameter types: Charset, 
+Exception types: 
+Modifiers: public
+******* Method #35 *******
+
+Method name: contentEquals
+Return type: boolean
+Parameter types: StringBuffer, 
+Exception types: 
+Modifiers: public
+******* Method #36 *******
+
+Method name: contentEquals
+Return type: boolean
+Parameter types: CharSequence, 
+Exception types: 
+Modifiers: public
+******* Method #37 *******
+
+Method name: nonSyncContentEquals
+Return type: boolean
+Parameter types: AbstractStringBuilder, 
+Exception types: 
+Modifiers: private
+******* Method #38 *******
+
+Method name: equalsIgnoreCase
+Return type: boolean
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #39 *******
+
+Method name: compareToIgnoreCase
+Return type: int
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #40 *******
+
+Method name: regionMatches
+Return type: boolean
+Parameter types: int, String, int, int, 
+Exception types: 
+Modifiers: public
+******* Method #41 *******
+
+Method name: regionMatches
+Return type: boolean
+Parameter types: boolean, int, String, int, int, 
+Exception types: 
+Modifiers: public
+******* Method #42 *******
+
+Method name: startsWith
+Return type: boolean
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #43 *******
+
+Method name: startsWith
+Return type: boolean
+Parameter types: String, int, 
+Exception types: 
+Modifiers: public
+******* Method #44 *******
+
+Method name: endsWith
+Return type: boolean
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #45 *******
+
+Method name: indexOfSupplementary
+Return type: int
+Parameter types: int, int, 
+Exception types: 
+Modifiers: private
+******* Method #46 *******
+
+Method name: lastIndexOf
+Return type: int
+Parameter types: int, int, 
+Exception types: 
+Modifiers: public
+******* Method #47 *******
+
+Method name: lastIndexOf
+Return type: int
+Parameter types: char[], int, int, char[], int, int, int, 
+Exception types: 
+Modifiers: static
+******* Method #48 *******
+
+Method name: lastIndexOf
+Return type: int
+Parameter types: char[], int, int, String, int, 
+Exception types: 
+Modifiers: static
+******* Method #49 *******
+
+Method name: lastIndexOf
+Return type: int
+Parameter types: String, int, 
+Exception types: 
+Modifiers: public
+******* Method #50 *******
+
+Method name: lastIndexOf
+Return type: int
+Parameter types: int, 
+Exception types: 
+Modifiers: public
+******* Method #51 *******
+
+Method name: lastIndexOf
+Return type: int
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #52 *******
+
+Method name: lastIndexOfSupplementary
+Return type: int
+Parameter types: int, int, 
+Exception types: 
+Modifiers: private
+******* Method #53 *******
+
+Method name: substring
+Return type: String
+Parameter types: int, 
+Exception types: 
+Modifiers: public
+******* Method #54 *******
+
+Method name: substring
+Return type: String
+Parameter types: int, int, 
+Exception types: 
+Modifiers: public
+******* Method #55 *******
+
+Method name: subSequence
+Return type: CharSequence
+Parameter types: int, int, 
+Exception types: 
+Modifiers: public
+******* Method #56 *******
+
+Method name: concat
+Return type: String
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #57 *******
+
+Method name: replace
+Return type: String
+Parameter types: char, char, 
+Exception types: 
+Modifiers: public
+******* Method #58 *******
+
+Method name: replace
+Return type: String
+Parameter types: CharSequence, CharSequence, 
+Exception types: 
+Modifiers: public
+******* Method #59 *******
+
+Method name: matches
+Return type: boolean
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #60 *******
+
+Method name: contains
+Return type: boolean
+Parameter types: CharSequence, 
+Exception types: 
+Modifiers: public
+******* Method #61 *******
+
+Method name: replaceFirst
+Return type: String
+Parameter types: String, String, 
+Exception types: 
+Modifiers: public
+******* Method #62 *******
+
+Method name: replaceAll
+Return type: String
+Parameter types: String, String, 
+Exception types: 
+Modifiers: public
+******* Method #63 *******
+
+Method name: split
+Return type: String[]
+Parameter types: String, int, 
+Exception types: 
+Modifiers: public
+******* Method #64 *******
+
+Method name: split
+Return type: String[]
+Parameter types: String, 
+Exception types: 
+Modifiers: public
+******* Method #65 *******
+
+Method name: join
+Return type: String
+Parameter types: CharSequence, CharSequence[], 
+Exception types: 
+Modifiers: public static transient
+******* Method #66 *******
+
+Method name: join
+Return type: String
+Parameter types: CharSequence, Iterable, 
+Exception types: 
+Modifiers: public static
+******* Method #67 *******
+
+Method name: toLowerCase
+Return type: String
+Parameter types: Locale, 
+Exception types: 
+Modifiers: public
+******* Method #68 *******
+
+Method name: toLowerCase
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #69 *******
+
+Method name: toUpperCase
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #70 *******
+
+Method name: toUpperCase
+Return type: String
+Parameter types: Locale, 
+Exception types: 
+Modifiers: public
+******* Method #71 *******
+
+Method name: trim
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #72 *******
+
+Method name: toCharArray
+Return type: char[]
+Parameter types: 
+Exception types: 
+Modifiers: public
+******* Method #73 *******
+
+Method name: format
+Return type: String
+Parameter types: Locale, String, Object[], 
+Exception types: 
+Modifiers: public static transient
+******* Method #74 *******
+
+Method name: format
+Return type: String
+Parameter types: String, Object[], 
+Exception types: 
+Modifiers: public static transient
+******* Method #75 *******
+
+Method name: copyValueOf
+Return type: String
+Parameter types: char[], int, int, 
+Exception types: 
+Modifiers: public static
+******* Method #76 *******
+
+Method name: copyValueOf
+Return type: String
+Parameter types: char[], 
+Exception types: 
+Modifiers: public static
+******* Method #77 *******
+
+Method name: intern
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public native
+
+ ***** Inherited Methods ***** 
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public abstract
+
+Method name: codePoints
+Return type: IntStream
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: length
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public abstract
+
+Method name: charAt
+Return type: char
+Parameter types: int, 
+Exception types: 
+Modifiers: public abstract
+
+Method name: subSequence
+Return type: CharSequence
+Parameter types: int, int, 
+Exception types: 
+Modifiers: public abstract
+
+Method name: chars
+Return type: IntStream
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: finalize
+Return type: void
+Parameter types: 
+Exception types: Throwable, 
+Modifiers: protected
+
+Method name: wait
+Return type: void
+Parameter types: long, int, 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: wait
+Return type: void
+Parameter types: long, 
+Exception types: InterruptedException, 
+Modifiers: public final native
+
+Method name: wait
+Return type: void
+Parameter types: 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: hashCode
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public native
+
+Method name: getClass
+Return type: Class
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: clone
+Return type: Object
+Parameter types: 
+Exception types: CloneNotSupportedException, 
+Modifiers: protected native
+
+Method name: notify
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: notifyAll
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: compareTo
+Return type: int
+Parameter types: Object, 
+Exception types: 
+Modifiers: public abstract
+
+
+************** Constructors **************
+******* Constructor #1 *******
+Constructor name: java.lang.String
+Parameters: byte[], int, int, 
+Modifiers: public
+******* Constructor #2 *******
+Constructor name: java.lang.String
+Parameters: byte[], Charset, 
+Modifiers: public
+******* Constructor #3 *******
+Constructor name: java.lang.String
+Parameters: byte[], String, 
+Modifiers: public
+******* Constructor #4 *******
+Constructor name: java.lang.String
+Parameters: byte[], int, int, Charset, 
+Modifiers: public
+******* Constructor #5 *******
+Constructor name: java.lang.String
+Parameters: byte[], int, int, String, 
+Modifiers: public
+******* Constructor #6 *******
+Constructor name: java.lang.String
+Parameters: char[], boolean, 
+Modifiers: 
+******* Constructor #7 *******
+Constructor name: java.lang.String
+Parameters: StringBuilder, 
+Modifiers: public
+******* Constructor #8 *******
+Constructor name: java.lang.String
+Parameters: StringBuffer, 
+Modifiers: public
+******* Constructor #9 *******
+Constructor name: java.lang.String
+Parameters: byte[], 
+Modifiers: public
+******* Constructor #10 *******
+Constructor name: java.lang.String
+Parameters: int[], int, int, 
+Modifiers: public
+******* Constructor #11 *******
+Constructor name: java.lang.String
+Parameters: 
+Modifiers: public
+******* Constructor #12 *******
+Constructor name: java.lang.String
+Parameters: char[], 
+Modifiers: public
+******* Constructor #13 *******
+Constructor name: java.lang.String
+Parameters: String, 
+Modifiers: public
+******* Constructor #14 *******
+Constructor name: java.lang.String
+Parameters: char[], int, int, 
+Modifiers: public
+******* Constructor #15 *******
+Constructor name: java.lang.String
+Parameters: byte[], int, 
+Modifiers: public
+******* Constructor #16 *******
+Constructor name: java.lang.String
+Parameters: byte[], int, int, int, 
+Modifiers: public
+
+ ***** Inherited Constructors ***** 
+Constructor name: java.lang.Object
+Parameters: 
+Modifiers: public
+
+
+************** Fields **************
+******* Field #1 *******
+Field name: CASE_INSENSITIVE_ORDER
+Field type: Comparator
+Modifiers: public static final
+
+ ***** Inherited Fields ***** 
+************** Object Inspection End **************
+
+
+************** Object Inspection Start **************
+Objects name is: java.lang.String$CaseInsensitiveComparator
+Objects superclass name is: java.lang.Object
+
+
+************** Interfaces **************
+Interface #0: java.util.Comparator
+Interface #1: java.io.Serializable
+
+
+************** Methods **************
+******* Method #1 *******
+
+Method name: compare
+Return type: int
+Parameter types: Object, Object, 
+Exception types: 
+Modifiers: public volatile
+******* Method #2 *******
+
+Method name: compare
+Return type: int
+Parameter types: String, String, 
+Exception types: 
+Modifiers: public
+******* Method #3 *******
+
+Method name: readResolve
+Return type: Object
+Parameter types: 
+Exception types: 
+Modifiers: private
+
+ ***** Inherited Methods ***** 
+
+Method name: finalize
+Return type: void
+Parameter types: 
+Exception types: Throwable, 
+Modifiers: protected
+
+Method name: wait
+Return type: void
+Parameter types: long, int, 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: wait
+Return type: void
+Parameter types: long, 
+Exception types: InterruptedException, 
+Modifiers: public final native
+
+Method name: wait
+Return type: void
+Parameter types: 
+Exception types: InterruptedException, 
+Modifiers: public final
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public
+
+Method name: toString
+Return type: String
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: hashCode
+Return type: int
+Parameter types: 
+Exception types: 
+Modifiers: public native
+
+Method name: getClass
+Return type: Class
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: clone
+Return type: Object
+Parameter types: 
+Exception types: CloneNotSupportedException, 
+Modifiers: protected native
+
+Method name: notify
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: notifyAll
+Return type: void
+Parameter types: 
+Exception types: 
+Modifiers: public final native
+
+Method name: equals
+Return type: boolean
+Parameter types: Object, 
+Exception types: 
+Modifiers: public abstract
+
+Method name: compare
+Return type: int
+Parameter types: Object, Object, 
+Exception types: 
+Modifiers: public abstract
+
+Method name: reversed
+Return type: Comparator
+Parameter types: 
+Exception types: 
+Modifiers: public
+
+Method name: thenComparing
+Return type: Comparator
+Parameter types: Function, 
+Exception types: 
+Modifiers: public
+
+Method name: thenComparing
+Return type: Comparator
+Parameter types: Function, Comparator, 
+Exception types: 
+Modifiers: public
+
+Method name: thenComparing
+Return type: Comparator
+Parameter types: Comparator, 
+Exception types: 
+Modifiers: public
+
+Method name: thenComparingInt
+Return type: Comparator
+Parameter types: ToIntFunction, 
+Exception types: 
+Modifiers: public
+
+Method name: thenComparingLong
+Return type: Comparator
+Parameter types: ToLongFunction, 
+Exception types: 
+Modifiers: public
+
+Method name: thenComparingDouble
+Return type: Comparator
+Parameter types: ToDoubleFunction, 
+Exception types: 
+Modifiers: public
+
+
+************** Constructors **************
+******* Constructor #1 *******
+Constructor name: java.lang.String$CaseInsensitiveComparator
+Parameters: , 
+Modifiers: 
+******* Constructor #2 *******
+Constructor name: java.lang.String$CaseInsensitiveComparator
+Parameters: 
+Modifiers: private
+
+ ***** Inherited Constructors ***** 
+Constructor name: java.lang.Object
+Parameters: 
+Modifiers: public
+
+
+************** Fields **************
+
+ ***** Inherited Fields ***** 
+************** Object Inspection End **************
+======================================================

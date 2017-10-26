@@ -7,16 +7,20 @@ public class Inspector{
 	private ArrayList<String> visitedClasses;
 	//List of objects that still must be recursively checked
 	private ArrayList<Object> toBeVisited;
-	
-	
+
+
 	public void Inspector(){
-		
+
 		toBeVisited = new ArrayList<Object>();
-		
+
 	}
 
 
 	public void inspect(Object obj, boolean recursive){
+		if (obj == null){
+			System.err.println("null object passed into inspect");
+			return;
+		}
 		//oc = object class
 		Class oc = obj.getClass();
 		if (oc == null){
@@ -40,7 +44,7 @@ public class Inspector{
 				if (objName.equals(storedName)){
 					return;
 				}
-			}		
+			}
 		}
 		//add obj class to list of visited objects
 		visitedClasses.add(objName);
@@ -69,8 +73,8 @@ public class Inspector{
 				currName++;
 			} catch (ClassNotFoundException cnfe) {System.out.println("Cant find class for given name " + name);};
 		}
-		
-		
+
+
 		//print interfaces for this class
 		Class<?>[] interfaces = oc.getInterfaces();
 		System.out.println("************** Interfaces **************");
@@ -78,7 +82,7 @@ public class Inspector{
 			//For each interface, print its name
 			System.out.println("Interface #" + i + ": " + interfaces[i].getName());
 		}
-		
+
 		//Print all method information
 		System.out.println();
 		System.out.println();
@@ -104,12 +108,12 @@ public class Inspector{
 		//If recursive is on, call inspect method on each object returned from field inspection
 		if (recursive){
 			for (Object o:toBeVisited){
-				inspect(o, recursive);	
+				inspect(o, recursive);
 			}
 		}
 
 	}
-	
+
 	//Helper method, find and prints all info about object methods
 	private void inspectMethods(Class c){
 		//Get an array of all methods in obj
@@ -166,7 +170,7 @@ public class Inspector{
 		for (Method m:allMethods){
 			inspectSingleMethod(m);
 		}
-	}	
+	}
 
 	private void inspectInheritedConstructors(Class[] classes){
 		ArrayList<Constructor> allConstructors = new ArrayList<Constructor>();
@@ -255,8 +259,8 @@ public class Inspector{
 			}
 			fieldNum++;
 		}
-		
-		
+
+
 	}
 
 	private boolean inspectSingleField(Field f, boolean recursive, Object object){
@@ -278,17 +282,17 @@ public class Inspector{
 		} else if (c.isArray()){
 			System.out.println("***Array Field***");
 			Class elementType = c.getComponentType();
-			
+
 			try{
-			
-			
+
+
 			//If it is an object and recursion is on, add it to "to be visited" list
 			if (!elementType.isPrimitive() && recursive){
 				Object[] targetArray = (Object[]) f.get(object);
 				for (int i = 0; i < targetArray.length; i++){
 					//add all elements of array to list to be inspected individually
 					toBeVisited.add(targetArray[i]);
-				}	
+				}
 			} else {
 				//Print all info of each element
 				Object targetPrimArray = f.get(object);
@@ -326,8 +330,8 @@ public class Inspector{
 				getInheritenceChain(interfaces[i], names);
 			}
 			getInheritenceChain(mySuper, names);
-		}	
-		
+		}
+
 	}
 
 

@@ -1,32 +1,77 @@
-import java.io.*;
-public class TestA2 implements Serializable{
+import org.junit.Before;
+import org.junit.Test;
+public class TestA2{
 
-	public Inspector iTest;
-	private static TestA2 singleton;
-	public boolean testBool = false;
-	public int testInt = 42;
-	public double testFloat = 0.005;
-	public int[] testIntArray =  {1,2,3,4,5};
-	public Object[] testObjArray;
+Inspector inspector;
+	@Before
+	public void setup(){
 
+		inspector = new Inspector();
 
-	public TestA2(){
-		iTest = new Inspector();
-		singleton = this;
-		testObjArray = new Object[3];
-		for (int i = 0; i < 3; i++){
-			testObjArray[i] = new Object();
+	}
+
+	@Test
+	public void testNullInput(){
+		Object test = null;
+		inspector.inspect(test, false);
+	}
+
+	@Test
+	public void testArrayInput(){
+		int[] test = new int[10];
+		for (int i = 0; i < 10; i++){
+			test[i] = i;
 		}
+		inspector.inspect(test, false);
+
 	}
 
-	public static void main(String[] args){
-		//Create an inspector
-		Inspector i = new Inspector();
+	@Test
+	public void testObjectArrayInput(){
+		Object[] test = new Object[10];
+		for (int i = 0; i < 10; i++){
+			test[i] = new Object();
+		}
+		inspector.inspect(test, false);
+	}
+	@Test
+	public void testObjectNullFields(){
+		TestObject test = new TestObject();
+		inspector.inspect(test, false);
+	}
+	@Test
+	public void testObjectWithFields(){
+		int[] array = new int[5];
+		for (int i = 0; i < 5; i++){
+			array[i] = i;
+		}
+		TestObject test = new TestObject(5, true, new Object(), array);
+		inspector.inspect(test, false);
+	}
+	@Test
+	public void testObjectRecursive(){
 		TestA2 test = new TestA2();
-		//pass it an object
-		Object s = new String("Hello world");
-		i.inspect(test, false);
-		//i.inspect(s, false);
-
+		inspector.inspect(test, true);
 	}
+	private class TestObject{
+		Integer testInt;
+		Boolean testBool;
+		Object testing;
+		int[] testIntArray;
+
+		public TestObject(){
+			testInt = null;
+			testBool = null;
+			testing = null;
+			testIntArray = null;
+		}
+
+		public TestObject(int i, boolean b, Object o, int[] array){
+			testInt = i;
+			testBool = b;
+			testing = o;
+			testIntArray = array;
+			}
+		};
+
 }

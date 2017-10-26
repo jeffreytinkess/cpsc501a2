@@ -1,0 +1,71 @@
+commit 4cc2b2ad8ae6f200abff80beb16ef84a4fef5d2e
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Wed Oct 25 19:00:58 2017 -0600
+
+    Added display of inherited fields/methods/constructors
+
+commit 96586bb3439a166fe929d26069a5d1776313faec
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Sat Oct 21 16:39:56 2017 -0600
+
+    Refactored list of objects left to be checked
+
+commit 8812a60ab773221fa6da757928c544660a918891
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Sat Oct 21 16:16:39 2017 -0600
+
+    Added array support, need to refactor recursive list to handle object arrays
+
+commit 4a02f59498f71b5532d7a91255fb4d591d8c845f
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Sat Oct 21 13:01:06 2017 -0600
+
+    Fixed bug in recursive display
+
+commit 375534ccea79baec7dc7d03b14ca0dc3205ad7f5
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Sat Oct 21 12:54:57 2017 -0600
+
+    Added recursive inspection
+
+commit ce60cb00e5ffd25abed30d2140c0d0634380572a
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Sat Oct 21 12:44:41 2017 -0600
+
+    Basic Field inspection (primitives and obj non-recursive)
+
+commit eb390767b1931db8a856fd978798fe6bb342d28c
+Author: jeffrey.tinkess <jeffrey.tinkess@zone44-eb.cs.ucalgary.ca>
+Date:   Thu Oct 19 11:38:27 2017 -0600
+
+    Added constructor inspection implementation
+
+commit 256f8570cafb47ff6c7035ac57a02163266c48c1
+Author: jeffrey.tinkess <jeffrey.tinkess@zone44-eb.cs.ucalgary.ca>
+Date:   Thu Oct 19 11:21:21 2017 -0600
+
+    Updated method displaying method
+
+commit 998a5732e3b85acfad5e0ebaf67497083f21309f
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Wed Oct 18 19:05:59 2017 -0600
+
+    Added method inspection
+
+commit cdfbed8f0b56da1dc3e59a2337ee05fe7e786880
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Wed Oct 18 18:27:01 2017 -0600
+
+    Basic class info prints (name/super/interfaces)
+
+commit 433c805ac23c0fd9350a490c3b9286f96b81a2ab
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Wed Oct 18 17:59:27 2017 -0600
+
+    Empty methods/Basic structure added
+
+commit 19316dafd9f2c235e204ca793bdeb93eaa2ed377
+Author: jeffrey.tinkess <jeffrey.tinkess@csx.cs.ucalgary.ca>
+Date:   Mon Oct 16 14:40:24 2017 -0600
+
+    Empty Repository A2 start
