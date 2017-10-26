@@ -5,3 +5,6 @@ I changed the list that checks for repetition in recursive applications from usi
 
 Refactoring #3
 I used extract method to move the lines of code that checked and initialized the class wide lists into a seperate method to reduce the size of inspect and improve readability.
+
+Refactoring #4
+Extracted lists from #3, from local variables into instance variables. Ran out of time, but a further refactoring would allow several of the method arguments to be modified to use these instance variables instead.
