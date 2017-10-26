@@ -7,14 +7,23 @@ public class Inspector{
 	private ArrayList<String> visitedClasses;
 	//List of objects that still must be recursively checked
 	private ArrayList<Object> toBeVisited;
-
-
+	private Set<String> inheritanceNames;
+	private Class[] inheritanceClasses;
 	public void Inspector(){
 
 		toBeVisited = new ArrayList<Object>();
 
 	}
-
+	private void initLists(){
+		//create list of visited objects if it has not been created
+		if (visitedClasses == null){
+			visitedClasses = new ArrayList<String>();
+		}
+		if (toBeVisited == null){
+			toBeVisited = new ArrayList<Object>();
+		}
+		inheritanceNames = new HashSet<String>();
+	}
 
 	public void inspect(Object obj, boolean recursive){
 		if (obj == null){
@@ -28,13 +37,7 @@ public class Inspector{
 			System.out.println("obj is null");
 			return;
 		}
-		//create list of visited objects if it has not been created
-		if (visitedClasses == null){
-			visitedClasses = new ArrayList<String>();
-		}
-		if (toBeVisited == null){
-			toBeVisited = new ArrayList<Object>();
-		}
+		initLists();
 		//Get object identifier
 		String objName = obj.toString();
 		//check if this class is in list (if recursive is true), return if so
@@ -60,11 +63,9 @@ public class Inspector{
 		System.out.println();
 		System.out.println();
 
-		//Get a list of intheritance chain
-		Set<String> inheritanceNames = new HashSet<String>();
 		getInheritenceChain(oc, inheritanceNames);
 		//Convert names into list of classes
-		Class[] inheritanceClasses = new Class[inheritanceNames.size()];
+		inheritanceClasses = new Class[inheritanceNames.size()];
 		int currName = 0;
 		for (String name: inheritanceNames){
 			try{
@@ -83,6 +84,18 @@ public class Inspector{
 			System.out.println("Interface #" + i + ": " + interfaces[i].getName());
 		}
 
+		printFormatedInfo(obj, recursive, oc);
+
+		//If recursive is on, call inspect method on each object returned from field inspection
+		if (recursive){
+			for (Object o:toBeVisited){
+				inspect(o, recursive);
+			}
+		}
+
+	}
+
+	private void printFormatedInfo(Object obj, boolean recursive, Class oc){
 		//Print all method information
 		System.out.println();
 		System.out.println();
@@ -105,14 +118,8 @@ public class Inspector{
 		//Call inherited field helper
 		inspectInheritedFields(inheritanceClasses, obj, recursive);
 		System.out.println("************** Object Inspection End **************");
-		//If recursive is on, call inspect method on each object returned from field inspection
-		if (recursive){
-			for (Object o:toBeVisited){
-				inspect(o, recursive);
-			}
-		}
-
 	}
+
 
 	//Helper method, find and prints all info about object methods
 	private void inspectMethods(Class c){

@@ -1,0 +1,7 @@
+Refactoring #1
+I noticed that the main inspect method had become too long as it was multiple lines for each property i was inspecting. I used extract method to being related lines (for example all lines relating to display of methods) into a seperate method that could be called. This reduced the size and improved readability of the main inspect method.
+Refactoring #2
+I changed the list that checks for repetition in recursive applications from using the class simple name to using the object hash name, so that multiple objects of the same type could be inspected. This was required to support inspection of object arrays and was a form of primitive obsession.
+
+Refactoring #3
+I used extract method to move the lines of code that checked and initialized the class wide lists into a seperate method to reduce the size of inspect and improve readability.
